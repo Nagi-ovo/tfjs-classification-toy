@@ -2,17 +2,29 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
     color: #333;
+    background-image: url('./assets/img/background.jpg'); /* Path to your image */
+    background-size: cover; /* Cover the entire page */
+    background-attachment: fixed; /* Fix the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center center; /* Center the image on the page */
 }
 
-h1 {
+h1, h2 {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
-    color: #5D4037;
-    padding: 20px;
-    margin-bottom: 10px;
-    background-color: #CFD8DC;
+    color: #ffffff; /* 使用白色字体提高对比度 */
+    background-color: rgba(0, 0, 0, 0.7); /* 背景使用半透明黑色增加可读性 */
+    padding: 20px; /* 增加填充以拉开与其他元素的距离 */
+    margin: 0 auto 20px; /* 设置自动水平边距和底部边距 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* 添加阴影效果 */
+    border-radius: 5px; /* 圆角边框 */
+    max-width: 80%; /* 限制最大宽度 */
+    display: block; /* 改回 block 属性确保元素不并排 */
+}
+
+h1 .small-text {
+    font-size: 0.6em; /* 小字体大小相对于 h1 的字体大小 */
 }
 
 p {
@@ -22,8 +34,9 @@ p {
 video {
     display: block;
     max-width: 100%;
-    border: 3px solid #5D4037;
+    max-height: 100%;
     margin: 0 auto;
+    border-radius: 15px; /* 这会给视频的四个角添加圆弧效果 */
 }
 
 section {
@@ -50,15 +63,15 @@ button {
     padding: 10px 20px;
     font-size: 16px;
     color: white;
-    background-color: #5D4037;
+    background-color: #19c262;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 300ms ease-in-out;
+    transition: background-color 400ms ease-in-out;
 }
 
 button:hover {
-    background-color: #8D6E63;
+    background-color: #c94c1e;
 }
 
 .camView p {
@@ -77,3 +90,38 @@ button:hover {
     transition: all 300ms ease-in-out;
 }
 
+.webcam-wrapper {
+    position: relative;
+    width: 640px; /* Webcam 的宽度 */
+    height: 480px; /* Webcam 的高度 */
+    margin: 0 auto; /* 水平居中 */
+  }
+  
+  .ipad-6 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 106%; /* 让 iPad 图像填充整个父元素 */
+    height: 108%; /* 保持图像的宽高比 */
+    z-index: 1; /* 确保 iPad 图像在底层 */
+  }
+  
+  .camView {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* 宽度与父元素相同 */
+    height: 100%; /* 高度与父元素相同 */
+    z-index: 2; /* 确保 webcam 在上层 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  video {
+    max-width: 100%;
+    max-height: 100%; /* 限制最大高度，以免超出 webcam-wrapper */
+    /* 不再需要 margin: 0 auto; 因为使用 flex 布局居中了 video 元素 */
+  }
+  
+  

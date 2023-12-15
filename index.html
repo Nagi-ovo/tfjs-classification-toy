@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+  <link rel="icon" href="./assets/img/logo.ico" type="image/x-icon">
   <head>
-    <title>我叫我叫王比比</title>
+    <title>《模式识别》实验课期末展示</title>
     <meta charset="utf-8">
-    <!-- Import the webpage's stylesheet -->
     <link rel="stylesheet" href="style.css">
   </head>  
   <body>
-    <h1>我叫我叫王比比</h1>
+    <h1>《模式识别》实验课期末展示<br><span class="small-text">组员：张泽西、臧元祥</span></h1>
 
-    <p>我叫我叫王比比</p>
-    
     <section id="demos" class="invisible">
-      <p>我叫我叫我叫我叫</p>
-      <p>我叫我叫王比比</p>
-      <p>我叫我叫王比比</p> 
-      <div id="liveView" class="camView">
-        <button id="webcamButton">开启 Webcam</button>
-        <video id="webcam" autoplay muted width="640" height="480"></video>
+      <div class="webcam-wrapper">
+        <div id="liveView" class="camView">
+          <button id="webcamButton">开启 Webcam</button>
+          <video id="webcam" autoplay muted width="640" height="480"></video>
+        </div>
+        <img src="assets/img/ipad-6.png" width="1080" class="ipad-6" alt="iPad App" data-action="zoom"/>
       </div>
+      
     </section>
+              
 
-    <!-- Import TensorFlow.js library -->
+
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js" type="text/javascript"></script>
-    <!-- Load the coco-ssd model to use to recognize things in images -->
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
-    
-    <!-- Import the page's JavaScript to do some stuff -->
     <script src="script.js" defer></script>
   </body>
 </html>
